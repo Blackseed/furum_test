@@ -1,0 +1,32 @@
+name: "일반 문의"
+description: "일반 문의는 네이버에서 답변을 하지 않습니다. 논의가 필요한 사항은 Discussion 메뉴를 이용해주시기 바랍니다."
+title: "[제보] " # 제목 접두사 설정 가능
+labels: ["bug", "triage"] # 자동 라벨 지정
+body:
+  - type: input
+    id: nickname
+    attributes:
+      label: "별명"
+      placeholder: "예: 홍길동 (개발팀)"
+    validations:
+      required: true # 필수 입력 설정
+
+  - type: textarea
+    id: content
+    attributes:
+      label: "본문"
+      description: "발생한 문제나 건의사항을 상세히 적어주세요."
+      placeholder: "내용을 입력하세요."
+    validations:
+      required: true # 필수 입력 설정
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "우선순위"
+      options:
+        - 높음
+        - 보통
+        - 낮음
+    validations:
+      required: true
