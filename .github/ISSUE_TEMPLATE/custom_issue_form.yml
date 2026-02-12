@@ -1,0 +1,40 @@
+name: "맞춤형 이슈 등록"
+description: "필수 정보를 기입하여 이슈를 등록해 주세요."
+title: "[제보] " # 제목 접두사 설정 가능
+labels: ["bug", "triage"] # 자동 라벨 지정
+body:
+  - type: input
+    id: nickname
+    attributes:
+      label: "별명"
+      placeholder: "예: 홍길동 (개발팀)"
+    validations:
+      required: true # 필수 입력 설정
+
+  - type: input
+    id: client_id
+    attributes:
+      label: "애플리케이션 정보"
+      placeholder: "클라이언트 아이디를 입력해주세요"
+    validations:
+      required: true # 필수 입력 설정
+
+  - type: textarea
+    id: content
+    attributes:
+      label: "본문"
+      description: "발생한 문제나 건의사항을 상세히 적어주세요."
+      placeholder: "내용을 입력하세요."
+    validations:
+      required: true # 필수 입력 설정
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "우선순위"
+      options:
+        - 높음
+        - 보통
+        - 낮음
+    validations:
+      required: true
